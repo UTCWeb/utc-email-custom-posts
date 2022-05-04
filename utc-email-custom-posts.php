@@ -13,10 +13,7 @@
  */
 
 /* Newsletter Custom Post Type and taxonomies */
-
-add_action( 'init', 'register_cpt_utcblogs_newsletter' );
-
-function register_cpt_utcblogs_newsletter() {
+function custom_post_type() {
 
     $labels = array(
         'name' => _x( 'Newsletters', 'utcblogs_newsletter' ),
@@ -54,6 +51,7 @@ function register_cpt_utcblogs_newsletter() {
 
     register_post_type( 'utcblogs_newsletter', $args );
 }
+add_action( 'init', 'custom_post_type', 0 );
 
 /**
  * register special image sizes and allow image size chooser to use 580
