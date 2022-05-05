@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name:     UTC Email Custom Posts
+ * Plugin Name:     UTC Email Newsletters
  * Plugin URI:      https://blog.utc.edu/
- * Description:     Custom Post Types for UTC HTML Emails
+ * Description:     Custom Post Templates for UTC HTML Emails
  * Author:          Chris Gilligan
  * Author URI:      https://chrisgilligan.com/
  * Text Domain:     utc-email-custom-posts
@@ -13,45 +13,71 @@
  */
 
 /* Newsletter Custom Post Type and taxonomies */
-function custom_post_type() {
 
-    $labels = array(
-        'name' => _x( 'Newsletters', 'utcblogs_newsletter' ),
-        'singular_name' => _x( 'Newsletter', 'utcblogs_newsletter' ),
-        'add_new' => _x( 'Add New', 'utcblogs_newsletter' ),
-        'add_new_item' => _x( 'Add New Newsletter', 'utcblogs_newsletter' ),
-        'edit_item' => _x( 'Edit Newsletter', 'utcblogs_newsletter' ),
-        'new_item' => _x( 'New Newsletter', 'utcblogs_newsletter' ),
-        'view_item' => _x( 'View Newsletter', 'utcblogs_newsletter' ),
-        'search_items' => _x( 'Search Newsletters', 'utcblogs_newsletter' ),
-        'not_found' => _x( 'No newsletters found', 'utcblogs_newsletter' ),
-        'not_found_in_trash' => _x( 'No newsletters found in Trash', 'utcblogs_newsletter' ),
-        'parent_item_colon' => _x( 'Parent Newsletter:', 'utcblogs_newsletter' ),
-        'menu_name' => _x( 'Newsletters', 'utcblogs_newsletter' ),
-    );
-
-    $args = array(
-        'labels' => $labels,
-        'hierarchical' => true,
-        'description' => 'UTCBlogs Newsletters',
-        'supports' => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'revisions', 'page-attributes' ),
-        'public' => true,
-        'show_ui' => true,
-        'show_in_menu' => true,
-        'menu_position' => 5,
-        'show_in_nav_menus' => true,
-        'publicly_queryable' => true,
+add_action( 'init', 'register_cpt_utcblogs_newsletter' );
+function register_cpt_utcblogs_newsletter() {
+    $args = [
+        'label'  => esc_html__( 'Newsletters', 'text-domain' ),
+        'labels' => [
+            'menu_name'          => esc_html__( 'Newsletters', 'utcblogs_newsletter' ),
+            'name_admin_bar'     => esc_html__( 'Newsletter', 'utcblogs_newsletter' ),
+            'add_new'            => esc_html__( 'Add Newsletter', 'utcblogs_newsletter' ),
+            'add_new_item'       => esc_html__( 'Add new Newsletter', 'utcblogs_newsletter' ),
+            'new_item'           => esc_html__( 'New Newsletter', 'utcblogs_newsletter' ),
+            'edit_item'          => esc_html__( 'Edit Newsletter', 'utcblogs_newsletter' ),
+            'view_item'          => esc_html__( 'View Newsletter', 'utcblogs_newsletter' ),
+            'update_item'        => esc_html__( 'View Newsletter', 'utcblogs_newsletter' ),
+            'all_items'          => esc_html__( 'All Newsletters', 'utcblogs_newsletter' ),
+            'search_items'       => esc_html__( 'Search Newsletters', 'utcblogs_newsletter' ),
+            'parent_item_colon'  => esc_html__( 'Parent Newsletter', 'utcblogs_newsletter' ),
+            'not_found'          => esc_html__( 'No Newsletters found', 'utcblogs_newsletter' ),
+            'not_found_in_trash' => esc_html__( 'No Newsletters found in Trash', 'utcblogs_newsletter' ),
+            'name'               => esc_html__( 'Newsletters', 'utcblogs_newsletter' ),
+            'singular_name'      => esc_html__( 'Newsletter', 'utcblogs_newsletter' ),
+        ],
+        'public'              => true,
         'exclude_from_search' => false,
-        'has_archive' => true,
-        'query_var' => true,
-        'can_export' => true,
-        'rewrite' => array('slug' => 'newsletters'),
-        'capability_type' => 'page'
-    );
+        'publicly_queryable'  => true,
+        'show_ui'             => true,
+        'show_in_nav_menus'   => true,
+        'show_in_admin_bar'   => true,
+        //'show_in_rest'        => true,//support for Gutenberg block editor
+        'capability_type'     => 'page',
+        'hierarchical'        => true,
+        'has_archive'         => 'newsletters',
+        'query_var'           => true,
+        'can_export'          => true,
+        'rewrite_no_front'    => false,
+        'show_in_menu'        => true,
+        'menu_position'       => 5,
+        //'rest_base'           => 'newsletters',//support for Gutenberg block editor
+        'menu_icon'           => 'dashicons-email-alt',
+        'supports' => [
+            'title',
+            'editor',
+            'excerpt',
+            'author',
+            'thumbnail',
+            'revisions',
+            'page-attributes',
+        ],
+
+        'rewrite' => [ 'slug' => 'newsletters', ]
+    ];
 
     register_post_type( 'utcblogs_newsletter', $args );
 }
-add_action( 'init', 'custom_post_type', 0 );
+
+add_filter( 'single_template', 'utcblogs_newsletter_custom_post_type_template' );
+function utcblogs_newsletter_custom_post_type_template($single_template) {
+    global $post;
+
+    if ($post->post_type == 'utcblogs_newsletter' ) {
+        $single_template = dirname( __FILE__ ) . '/single-utcblogs_newsletter.php';
+    }
+    return $single_template;
+
+}
 
 /**
  * register special image sizes and allow image size chooser to use 580
