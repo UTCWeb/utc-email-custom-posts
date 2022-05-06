@@ -42,6 +42,7 @@ function register_cpt_utcblogs_newsletter() {
         'show_in_nav_menus'   => true,
         'show_in_admin_bar'   => true,
         //'show_in_rest'        => true,//support for Gutenberg block editor
+        //'rest_base'           => 'newsletters',//support for Gutenberg block editor
         'capability_type'     => 'page',
         'hierarchical'        => true,
         'has_archive'         => 'newsletters',
@@ -50,7 +51,6 @@ function register_cpt_utcblogs_newsletter() {
         'rewrite_no_front'    => false,
         'show_in_menu'        => true,
         'menu_position'       => 5,
-        //'rest_base'           => 'newsletters',//support for Gutenberg block editor
         'menu_icon'           => 'dashicons-email-alt',
         'supports' => [
             'title',
@@ -68,7 +68,7 @@ function register_cpt_utcblogs_newsletter() {
     register_post_type( 'utcblogs_newsletter', $args );
 }
 
-add_filter( 'single_template', 'utcblogs_newsletter_custom_post_type_template' );
+add_filter( 'single_template', 'utcblogs_newsletter_custom_post_type_template', 99 );
 function utcblogs_newsletter_custom_post_type_template($single_template) {
     global $post;
 
