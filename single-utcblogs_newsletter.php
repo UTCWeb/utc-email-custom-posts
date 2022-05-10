@@ -9,7 +9,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width">
-    <title><?php the_title(); ?> | <?php bloginfo( 'name' ); ?></title>
+    <title><?php bloginfo( 'name' ); ?>: <?php the_title(); ?></title>
     <?php
     if ( function_exists( 'yoast_analytics' ) ) {
         yoast_analytics();
