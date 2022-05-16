@@ -68,16 +68,129 @@ function register_cpt_utcblogs_newsletter() {
     register_post_type( 'utcblogs_newsletter', $args );
 }
 
-add_filter( 'single_template', 'utcblogs_newsletter_custom_post_type_template', 99 );
-function utcblogs_newsletter_custom_post_type_template($single_template) {
-    global $post;
+/**
+ * load WP Templater library file
+ * https://github.com/mohamdio/wp-templater
+ * via file or composer autoload,
+ * composer require jozoor/wp-templater
+ */
 
-    if ($post->post_type == 'utcblogs_newsletter' ) {
-        $single_template = dirname( __FILE__ ) . '/single-utcblogs_newsletter.php';
-    }
-    return $single_template;
+require_once __DIR__ . '/../wp-templater/src/Templater.php';
+
+use JO\Module\Templater\Templater;
+
+/**
+ * How to use Templater
+ */
+
+// we should add our new Templater inside action hook
+add_action('plugins_loaded', 'load_templater');
+
+function load_templater()
+{
+
+    // setup our templater
+    $my_templater = new Templater(
+        array(
+            // YOUR_PLUGIN_DIR or plugin_dir_path(__FILE__)
+            'plugin_directory'          => plugin_dir_path(__FILE__),
+            // should end with _ > prefix_
+            'plugin_prefix'             => 'plugin_prefix_',
+            // templates directory inside your plugin
+            'plugin_template_directory' => 'templates',
+        )
+    );
+
+
+    // add our new custom templates
+    $my_templater->add(
+
+    // array of available templates
+        array(
+
+            /**
+             * default usage:
+             * 'post_type_name' => array(
+             *      'template_file.php' => 'template_name',
+             *      or
+             *      'path/to/template_file.php' => 'template_name',
+             * ),
+             *
+             * Note: all this files should be inside your
+             * 'plugin_template_directory' => 'templates',
+             * so this is parent directory > 'templates/path/template_file.php'
+             */
+
+            /**
+            // add 'post' type custom templates
+            'post' => array(
+                // just file without any sub folders
+                'post-template.php' => 'Post Custom Template',
+                // with sub folders
+                'path/to/post-template.php' => 'Post Custom Template',
+            ),
+
+            // add 'page' type custom templates
+            'page' => array(
+                // just file without any sub folders
+                'page-template.php' => 'Page Custom Template',
+                // with sub folders
+                'path/to/page-template.php' => 'Page Custom Template',
+            ),
+            */
+
+            // add 'custom_post_type' type custom templates, for ex: product
+            'utcblogs_newsletter' => array(
+                // just file without any sub folders
+                'templates/single-utcblogs_newsletter.php' => 'Campus Weekly Newsletter',
+                // with sub folders
+                //'path/to/product-template.php' => 'Product Custom Template',
+            ),
+
+            // ..etc
+
+            /**
+             * Note: you can name your template file anything you like
+             * i mean you shouldn't add post type name in template name, like
+             * 'post-template.php' < this just for show you examples
+             */
+
+            /**
+             * Note: why we separated templates in the top by 'post types' ?
+             * because we need this when working on any WP version 4.7 and later
+             * which custom templates supported post types, but for WP version
+             * 4.6 and older, all this templates will be merged, because we
+             * working on 'page' enough, not like WP version 4.7 and later,
+             * which we add templates only for exact post type.
+             */
+
+        )
+
+    // here we actually will add all this new templates.
+    )->register();
 
 }
+
+
+/**
+ * How to override final custom template file in themes or plugins
+ */
+
+add_filter('plugin_prefix_override_plugin_custom_template', 'override_plugin_custom_template');
+
+function override_plugin_custom_template($template_file)
+{
+
+    // add another template file here
+    $template_file = plugin_dir_path(__FILE__) . 'templates/my_override_template.php';
+
+    // or do whatever ..
+
+    // return new updated template or default template
+    return $template_file;
+
+}
+
 
 /**
  * register special image sizes and allow image size chooser to use 580
