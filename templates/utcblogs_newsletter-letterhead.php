@@ -128,7 +128,7 @@ if ( function_exists( 'yoast_analytics' ) ) {
 						.'</table>'; 
 					} ?>
                     </td>
-    				<td align="center"><a href="https://www.utc.edu" target="_blank"><img src="<?php echo plugin_dir_url( __FILE__ ).'assets/img/web-wordmark-retina.png'; ?>" width="250" height="36" alt="UT icon" border="0" /></a></td>
+    				<td align="center"><a href="https://www.utc.edu" target="_blank"><img src="<?php echo plugin_dir_url( __DIR__ ).'assets/img/web-wordmark-retina.png'; ?>" width="250" height="36" alt="UT icon" border="0" /></a></td>
   					</tr>
 				</table>
 				

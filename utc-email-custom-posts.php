@@ -69,131 +69,168 @@ function register_cpt_utcblogs_newsletter() {
 }
 
 /**
- * load WP Templater library file
- * https://github.com/mohamdio/wp-templater
- * via file or composer autoload,
- * composer require jozoor/wp-templater
+ * https://github.com/wpexplorer/page-templater
  */
+class PageTemplater {
 
-//require_once __DIR__ . '/vendor/autoload.php';// via Composer
-require_once __DIR__ . '/../wp-templater/src/Templater.php';// via direct file; for local dev only
+    /**
+     * A reference to an instance of this class.
+     */
+    private static $instance;
 
-use JO\Module\Templater\Templater;
+    /**
+     * The array of templates that this plugin tracks.
+     */
+    protected $templates;
 
-/**
- * How to use Templater
- */
+    /**
+     * Returns an instance of this class.
+     */
+    public static function get_instance() {
 
-// we should add our new Templater inside action hook
-add_action('plugins_loaded', 'load_templater');
+        if ( null == self::$instance ) {
+            self::$instance = new PageTemplater();
+        }
 
-function load_templater()
-{
+        return self::$instance;
 
-    // setup our templater
-    $my_templater = new Templater(
-        array(
-            // YOUR_PLUGIN_DIR or plugin_dir_path(__FILE__)
-            'plugin_directory'          => plugin_dir_path(__FILE__),
-            // should end with _ > prefix_
-            'plugin_prefix'             => 'utcecpt_',
-            // templates directory inside your plugin
-            'plugin_template_directory' => 'templates',
-        )
-    );
+    }
+
+    /**
+     * Initializes the plugin by setting filters and administration functions.
+     */
+    private function __construct() {
+
+        $this->templates = array();
 
 
-    // add our new custom templates
-    $my_templater->add(
+        // Add a filter to the attributes metabox to inject template into the cache.
+        if ( version_compare( floatval( get_bloginfo( 'version' ) ), '4.7', '<' ) ) {
 
-    // array of available templates
-        array(
+            // 4.6 and older
+            add_filter(
+                'page_attributes_dropdown_pages_args',
+                array( $this, 'register_project_templates' )
+            );
 
-            /**
-             * default usage:
-             * 'post_type_name' => array(
-             *      'template_file.php' => 'template_name',
-             *      or
-             *      'path/to/template_file.php' => 'template_name',
-             * ),
-             *
-             * Note: all this files should be inside your
-             * 'plugin_template_directory' => 'templates',
-             * so this is parent directory > 'templates/path/template_file.php'
-             */
+        } else {
 
-            /**
-            // add 'post' type custom templates
-            'post' => array(
-                // just file without any sub folders
-                'post-template.php' => 'Post Custom Template',
-                // with sub folders
-                'path/to/post-template.php' => 'Post Custom Template',
-            ),
+            // Add a filter to the wp 4.7 version attributes metabox
+            add_filter(
+                'theme_page_templates', array( $this, 'add_new_template' )
+            );
 
-            // add 'page' type custom templates
-            'page' => array(
-                // just file without any sub folders
-                'page-template.php' => 'Page Custom Template',
-                // with sub folders
-                'path/to/page-template.php' => 'Page Custom Template',
-            ),
-            */
+        }
 
-            // add 'custom_post_type' type custom templates, for ex: product
-            'utcblogs_newsletter' => array(
-                // just file without any sub folders
-                //'page-template.php' => 'Page Custom Template',
-                // with sub folders
-                //'path/to/product-template.php' => 'Product Custom Template',
-                'templates/single-utcblogs_newsletter.php' => 'Campus Weekly Newsletter',
-                'templates/utcblogs_newsletter-digest.php' => 'Weekly Digest Newsletter',
-                'templates/utcblogs_newsletter-letterhead.php' => 'Letterhead Newsletter',
-            ),
+        // Add a filter to the save post to inject out template into the page cache
+        add_filter(
+            'wp_insert_post_data',
+            array( $this, 'register_project_templates' )
+        );
 
-            // ..etc
 
-            /**
-             * Note: you can name your template file anything you like
-             * i mean you shouldn't add post type name in template name, like
-             * 'post-template.php' < this just for show you examples
-             */
+        // Add a filter to the template include to determine if the page has our
+        // template assigned and return it's path
+        add_filter(
+            'template_include',
+            array( $this, 'view_project_template')
+        );
 
-            /**
-             * Note: why we separated templates in the top by 'post types' ?
-             * because we need this when working on any WP version 4.7 and later
-             * which custom templates supported post types, but for WP version
-             * 4.6 and older, all this templates will be merged, because we
-             * working on 'page' enough, not like WP version 4.7 and later,
-             * which we add templates only for exact post type.
-             */
 
-        )
+        // Add your templates to this array.
+        $this->templates = array(
+            'templates/single-utcblogs_newsletter.php' => 'Campus Weekly Newsletter',
+            'templates/utcblogs_newsletter-digest.php' => 'Weekly Digest Newsletter',
+            'templates/utcblogs_newsletter-letterhead.php' => 'Letterhead Newsletter',
+        );
 
-    // here we actually will add all this new templates.
-    )->register();
+    }
+
+    /**
+     * Adds our template to the page dropdown for v4.7+
+     *
+     */
+    public function add_new_template( $posts_templates ) {
+        $posts_templates = array_merge( $posts_templates, $this->templates );
+        return $posts_templates;
+    }
+
+    /**
+     * Adds our template to the pages cache in order to trick WordPress
+     * into thinking the template file exists where it doens't really exist.
+     */
+    public function register_project_templates( $atts ) {
+
+        // Create the key used for the themes cache
+        $cache_key = 'page_templates-' . md5( get_theme_root() . '/' . get_stylesheet() );
+
+        // Retrieve the cache list.
+        // If it doesn't exist, or it's empty prepare an array
+        $templates = wp_get_theme()->get_page_templates();
+        if ( empty( $templates ) ) {
+            $templates = array();
+        }
+
+        // New cache, therefore remove the old one
+        wp_cache_delete( $cache_key , 'themes');
+
+        // Now add our template to the list of templates by merging our templates
+        // with the existing templates array from the cache.
+        $templates = array_merge( $templates, $this->templates );
+
+        // Add the modified cache to allow WordPress to pick it up for listing
+        // available templates
+        wp_cache_add( $cache_key, $templates, 'themes', 1800 );
+
+        return $atts;
+
+    }
+
+    /**
+     * Checks if the template is assigned to the page
+     */
+    public function view_project_template( $template ) {
+        // Return the search template if we're searching (instead of the template for the first result)
+        if ( is_search() ) {
+            return $template;
+        }
+
+        // Get global post
+        global $post;
+
+        // Return template if post is empty
+        if ( ! $post ) {
+            return $template;
+        }
+
+        // Return default template if we don't have a custom one defined
+        if ( ! isset( $this->templates[get_post_meta(
+                $post->ID, '_wp_page_template', true
+            )] ) ) {
+            return $template;
+        }
+
+        // Allows filtering of file path
+        $filepath = apply_filters( 'page_templater_plugin_dir_path', plugin_dir_path( __FILE__ ) );
+
+        $file =  $filepath . get_post_meta(
+                $post->ID, '_wp_page_template', true
+            );
+
+        // Just to be safe, we check if the file exist first
+        if ( file_exists( $file ) ) {
+            return $file;
+        } else {
+            echo $file;
+        }
+
+        // Return template
+        return $template;
+
+    }
 
 }
-
-
-/**
- * How to override final custom template file in themes or plugins
- */
-
-add_filter('plugin_prefix_override_plugin_custom_template', 'override_plugin_custom_template');
-
-function override_plugin_custom_template($template_file)
-{
-
-    // add another template file here
-    $template_file = plugin_dir_path(__FILE__) . 'single-utcblogs_newsletter.php';
-
-    // or do whatever ..
-
-    // return new updated template or default template
-    return $template_file;
-
-}
+add_action( 'plugins_loaded', array( 'PageTemplater', 'get_instance' ) );
 
 /**
  * register special image sizes and allow image size chooser to use 580

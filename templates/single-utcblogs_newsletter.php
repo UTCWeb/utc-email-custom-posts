@@ -47,7 +47,7 @@
                                                         <tbody>
                                                         <tr style="padding:0;text-align:left;vertical-align:top">
                                                             <th style="-moz-box-sizing:border-box;-moz-hyphens:auto;-webkit-box-sizing:border-box;-webkit-hyphens:auto;Margin:0;border-collapse:collapse!important;box-sizing:border-box;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;hyphens:auto;line-height:1.4;margin:0;padding:0;text-align:left;vertical-align:top;word-wrap:break-word">
-                                                                <img src="<?php echo plugin_dir_url( __FILE__ ).'assets/img/web-wordmark-retina.png'; ?>" height="40" width="275" style="-ms-interpolation-mode:bicubic;clear:both;display:block;max-width:100%;outline:0;text-decoration:none;width:auto">
+                                                                <img src="<?php echo plugin_dir_url( __DIR__ ).'assets/img/web-wordmark-retina.png'; ?>" height="40" width="275" style="-ms-interpolation-mode:bicubic;clear:both;display:block;max-width:100%;outline:0;text-decoration:none;width:auto">
                                                             </th>
                                                         </tr>
                                                         </tbody>
@@ -58,7 +58,7 @@
                                                         <tbody>
                                                         <tr style="padding:0;text-align:left;vertical-align:top">
                                                             <th style="-moz-box-sizing:border-box;-moz-hyphens:auto;-webkit-box-sizing:border-box;-webkit-hyphens:auto;Margin:0;border-collapse:collapse!important;box-sizing:border-box;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;hyphens:auto;line-height:1.4;margin:0;padding:0;text-align:left;vertical-align:top;word-wrap:break-word">
-                                                                <img class="float-right" style="-ms-interpolation-mode:bicubic;clear:both;display:block;float:right;margin-bottom:-34px;margin-top:-18px;max-width:100%;outline:0;text-align:right;text-decoration:none;width:auto" src="<?php echo plugin_dir_url( __FILE__ ).'assets/img/gray-gold-slash.png';?>">
+                                                                <img class="float-right" style="-ms-interpolation-mode:bicubic;clear:both;display:block;float:right;margin-bottom:-34px;margin-top:-18px;max-width:100%;outline:0;text-align:right;text-decoration:none;width:auto" src="<?php echo plugin_dir_url( __DIR__ ).'assets/img/gray-gold-slash.png';?>">
                                                             </th>
                                                         </tr>
                                                         </tbody>
@@ -149,7 +149,7 @@
                                                                                 <tr style="padding:0;text-align:left;vertical-align:top">
                                                                                     <th style="-moz-box-sizing:border-box;-moz-hyphens:auto;-webkit-box-sizing:border-box;-webkit-hyphens:auto;Margin:0;border-collapse:collapse!important;box-sizing:border-box;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;hyphens:auto;line-height:1.4;margin:0;padding:0;text-align:left;vertical-align:top;word-wrap:break-word">
                                                                                         <a href="https://www.facebook.com/UTChattanooga/" style="color:#166484;font-family:Helvetica,Arial,sans-serif;font-weight:400;line-height:1.4;padding:0;text-align:left;text-decoration:none">
-                                                                                            <img class="float-center" src="<?php echo plugin_dir_url( __FILE__ ).'assets/img/facebook.png';?>" style="-ms-interpolation-mode:bicubic;Margin:0 auto;border:none;clear:both;display:block;float:none;margin:0 auto;max-width:100%;outline:0;text-align:center;text-decoration:none;width:auto">
+                                                                                            <img class="float-center" src="<?php echo plugin_dir_url( __DIR__ ).'assets/img/facebook.png';?>" style="-ms-interpolation-mode:bicubic;Margin:0 auto;border:none;clear:both;display:block;float:none;margin:0 auto;max-width:100%;outline:0;text-align:center;text-decoration:none;width:auto">
                                                                                         </a>
                                                                                     </th>
                                                                                 </tr>
@@ -162,7 +162,7 @@
                                                                                 <tr style="padding:0;text-align:left;vertical-align:top">
                                                                                     <th style="-moz-box-sizing:border-box;-moz-hyphens:auto;-webkit-box-sizing:border-box;-webkit-hyphens:auto;Margin:0;border-collapse:collapse!important;box-sizing:border-box;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;hyphens:auto;line-height:1.4;margin:0;padding:0;text-align:left;vertical-align:top;word-wrap:break-word">
                                                                                         <a href="https://www.instagram.com/utchattanooga/" style="color:#166484;font-family:Helvetica,Arial,sans-serif;font-weight:400;line-height:1.4;padding:0;text-align:left;text-decoration:none">
-                                                                                            <img class="float-center" src="<?php echo plugin_dir_url( __FILE__ ).'assets/img/instagram.png';?>" style="-ms-interpolation-mode:bicubic;Margin:0 auto;border:none;clear:both;display:block;float:none;margin:0 auto;max-width:100%;outline:0;text-align:center;text-decoration:none;width:auto">
+                                                                                            <img class="float-center" src="<?php echo plugin_dir_url( __DIR__ ).'assets/img/instagram.png';?>" style="-ms-interpolation-mode:bicubic;Margin:0 auto;border:none;clear:both;display:block;float:none;margin:0 auto;max-width:100%;outline:0;text-align:center;text-decoration:none;width:auto">
                                                                                         </a>
                                                                                     </th>
                                                                                 </tr>
@@ -175,7 +175,7 @@
                                                                                 <tr style="padding:0;text-align:left;vertical-align:top">
                                                                                     <th style="-moz-box-sizing:border-box;-moz-hyphens:auto;-webkit-box-sizing:border-box;-webkit-hyphens:auto;Margin:0;border-collapse:collapse!important;box-sizing:border-box;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;hyphens:auto;line-height:1.4;margin:0;padding:0;text-align:left;vertical-align:top;word-wrap:break-word">
                                                                                         <a href="https://twitter.com/utchattanooga" style="color:#166484;font-family:Helvetica,Arial,sans-serif;font-weight:400;line-height:1.4;padding:0;text-align:left;text-decoration:none">
-                                                                                            <img class="float-center" src="<?php echo plugin_dir_url( __FILE__ ).'assets/img/twitter.png';?>" style="-ms-interpolation-mode:bicubic;Margin:0 auto;border:none;clear:both;display:block;float:none;margin:0 auto;max-width:100%;outline:0;text-align:center;text-decoration:none;width:auto">
+                                                                                            <img class="float-center" src="<?php echo plugin_dir_url( __DIR__ ).'assets/img/twitter.png';?>" style="-ms-interpolation-mode:bicubic;Margin:0 auto;border:none;clear:both;display:block;float:none;margin:0 auto;max-width:100%;outline:0;text-align:center;text-decoration:none;width:auto">
                                                                                         </a>
                                                                                     </th>
                                                                                 </tr>
@@ -188,7 +188,7 @@
                                                                                 <tr style="padding:0;text-align:left;vertical-align:top">
                                                                                     <th style="-moz-box-sizing:border-box;-moz-hyphens:auto;-webkit-box-sizing:border-box;-webkit-hyphens:auto;Margin:0;border-collapse:collapse!important;box-sizing:border-box;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;hyphens:auto;line-height:1.4;margin:0;padding:0;text-align:left;vertical-align:top;word-wrap:break-word">
                                                                                         <a href="https://www.linkedin.com/school/27384/" style="color:#166484;font-family:Helvetica,Arial,sans-serif;font-weight:400;line-height:1.4;padding:0;text-align:left;text-decoration:none">
-                                                                                            <img class="float-center" src="<?php echo plugin_dir_url( __FILE__ ).'assets/img/linkedin.png';?>" style="-ms-interpolation-mode:bicubic;Margin:0 auto;border:none;clear:both;display:block;float:none;margin:0 auto;max-width:100%;outline:0;text-align:center;text-decoration:none;width:auto">
+                                                                                            <img class="float-center" src="<?php echo plugin_dir_url( __DIR__ ).'assets/img/linkedin.png';?>" style="-ms-interpolation-mode:bicubic;Margin:0 auto;border:none;clear:both;display:block;float:none;margin:0 auto;max-width:100%;outline:0;text-align:center;text-decoration:none;width:auto">
                                                                                         </a>
                                                                                     </th>
                                                                                 </tr>
