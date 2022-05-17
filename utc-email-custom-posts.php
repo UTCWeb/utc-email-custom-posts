@@ -75,7 +75,8 @@ function register_cpt_utcblogs_newsletter() {
  * composer require jozoor/wp-templater
  */
 
-require_once __DIR__ . '/../wp-templater/src/Templater.php';
+//require_once __DIR__ . '/vendor/autoload.php';// via Composer
+require_once __DIR__ . '/../wp-templater/src/Templater.php';// via direct file; for local dev only
 
 use JO\Module\Templater\Templater;
 
@@ -95,7 +96,7 @@ function load_templater()
             // YOUR_PLUGIN_DIR or plugin_dir_path(__FILE__)
             'plugin_directory'          => plugin_dir_path(__FILE__),
             // should end with _ > prefix_
-            'plugin_prefix'             => 'plugin_prefix_',
+            'plugin_prefix'             => 'utcecpt_',
             // templates directory inside your plugin
             'plugin_template_directory' => 'templates',
         )
@@ -142,9 +143,12 @@ function load_templater()
             // add 'custom_post_type' type custom templates, for ex: product
             'utcblogs_newsletter' => array(
                 // just file without any sub folders
-                'templates/single-utcblogs_newsletter.php' => 'Campus Weekly Newsletter',
+                //'page-template.php' => 'Page Custom Template',
                 // with sub folders
                 //'path/to/product-template.php' => 'Product Custom Template',
+                'templates/single-utcblogs_newsletter.php' => 'Campus Weekly Newsletter',
+                'templates/utcblogs_newsletter-digest.php' => 'Weekly Digest Newsletter',
+                'templates/utcblogs_newsletter-letterhead.php' => 'Letterhead Newsletter',
             ),
 
             // ..etc
@@ -182,7 +186,7 @@ function override_plugin_custom_template($template_file)
 {
 
     // add another template file here
-    $template_file = plugin_dir_path(__FILE__) . 'templates/my_override_template.php';
+    $template_file = plugin_dir_path(__FILE__) . 'single-utcblogs_newsletter.php';
 
     // or do whatever ..
 
@@ -190,7 +194,6 @@ function override_plugin_custom_template($template_file)
     return $template_file;
 
 }
-
 
 /**
  * register special image sizes and allow image size chooser to use 580
