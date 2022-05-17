@@ -76,7 +76,7 @@ function register_cpt_utcblogs_newsletter() {
  */
 
 //require_once __DIR__ . '/vendor/autoload.php';// via Composer
-require_once __DIR__ . '/../wp-templater/src/Templater.php';// via direct file; for local dev only
+require_once __DIR__ . '/../wp-templater/src/Templater.php';// via local plugin; for local dev only
 
 use JO\Module\Templater\Templater;
 
@@ -94,9 +94,9 @@ function load_templater()
     $my_templater = new Templater(
         array(
             // YOUR_PLUGIN_DIR or plugin_dir_path(__FILE__)
-            'plugin_directory'          => plugin_dir_path(__FILE__),
+            'plugin_directory'          => plugin_dir_path(__DIR__),
             // should end with _ > prefix_
-            'plugin_prefix'             => 'utcecpt_',
+            'plugin_prefix'             => 'utcblogs_newsletter_',
             // templates directory inside your plugin
             'plugin_template_directory' => 'templates',
         )
@@ -146,9 +146,9 @@ function load_templater()
                 //'page-template.php' => 'Page Custom Template',
                 // with sub folders
                 //'path/to/product-template.php' => 'Product Custom Template',
-                'templates/single-utcblogs_newsletter.php' => 'Campus Weekly Newsletter',
-                'templates/utcblogs_newsletter-digest.php' => 'Weekly Digest Newsletter',
-                'templates/utcblogs_newsletter-letterhead.php' => 'Letterhead Newsletter',
+                'single-utcblogs_newsletter.php' => 'Campus Weekly Newsletter',
+                'utcblogs_newsletter-digest.php' => 'Weekly Digest Newsletter',
+                'utcblogs_newsletter-letterhead.php' => 'Letterhead Newsletter',
             ),
 
             // ..etc
@@ -172,26 +172,6 @@ function load_templater()
 
     // here we actually will add all this new templates.
     )->register();
-
-}
-
-
-/**
- * How to override final custom template file in themes or plugins
- */
-
-add_filter('plugin_prefix_override_plugin_custom_template', 'override_plugin_custom_template');
-
-function override_plugin_custom_template($template_file)
-{
-
-    // add another template file here
-    $template_file = plugin_dir_path(__FILE__) . 'single-utcblogs_newsletter.php';
-
-    // or do whatever ..
-
-    // return new updated template or default template
-    return $template_file;
 
 }
 
