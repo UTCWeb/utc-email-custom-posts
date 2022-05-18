@@ -76,7 +76,7 @@ function register_cpt_utcblogs_newsletter() {
  */
 
 //require_once __DIR__ . '/vendor/autoload.php';// via Composer
-require_once __DIR__ . '/../wp-templater/src/Templater.php';// via local plugin; for local dev only
+require_once __DIR__ . '/wp-templater/src/Templater.php';// via local plugin; for local dev only
 
 use JO\Module\Templater\Templater;
 
