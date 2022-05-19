@@ -76,7 +76,7 @@ function register_cpt_utcblogs_newsletter() {
  */
 
 //require_once __DIR__ . '/vendor/autoload.php';// via Composer
-require_once __DIR__ . 'wp-templater-1.0.1/src/Templater.php';// via local plugin; for local dev only
+require_once __DIR__ . '/wp-templater-1.0.1/src/Templater.php';// via local plugin; for local dev only
 
 use JO\Module\Templater\Templater;
 
@@ -94,7 +94,7 @@ function load_templater()
     $my_templater = new Templater(
         array(
             // YOUR_PLUGIN_DIR or plugin_dir_path(__FILE__)
-            'plugin_directory'          => plugin_dir_path(__DIR__),
+            'plugin_directory'          => plugin_dir_path(__FILE__),
             // should end with _ > prefix_
             'plugin_prefix'             => 'utcblogs_newsletter_',
             // templates directory inside your plugin
