@@ -75,8 +75,8 @@ function register_cpt_utcblogs_newsletter() {
  * composer require jozoor/wp-templater
  */
 
-//require_once __DIR__ . '/vendor/autoload.php';// via Composer
-require_once __DIR__ . '/wp-templater-1.0.1/src/Templater.php';// via local plugin; for local dev only
+require_once __DIR__ . '/vendor/autoload.php';// via Composer
+//require_once __DIR__ . '/wp-templater-1.0.1/src/Templater.php';// via local plugin; for local dev only
 
 use JO\Module\Templater\Templater;
 
@@ -147,8 +147,8 @@ function load_templater()
                 // with sub folders
                 //'path/to/product-template.php' => 'Product Custom Template',
                 'utcblogs_newsletter-campusweekly.php' => 'Campus Weekly Newsletter',
-                'utcblogs_newsletter-digest.php' => 'Weekly Digest Newsletter',
-                'utcblogs_newsletter-letterhead.php' => 'Letterhead Newsletter',
+                //'utcblogs_newsletter-digest.php' => 'Weekly Digest Newsletter',
+                //'utcblogs_newsletter-letterhead.php' => 'Letterhead Newsletter',
             ),
 
             // ..etc
