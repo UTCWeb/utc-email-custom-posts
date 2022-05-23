@@ -45,7 +45,7 @@ if ( function_exists( 'yoast_analytics' ) ) {
 							   $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large');
 							   echo $large_image_url[0];
 							 }
-							 else { echo 'https://placehold.it/600x173&text=Featured+Image+exactly+600px+by+173px'; }
+							 else { echo 'https://via.placeholder.com/600x173&text=Featured+Image+exactly+600px+by+173px'; }
 							?>" width="600" height="173" alt="<?php bloginfo( 'description' ); ?>" border="0" />
 			</a>
 		</td>
@@ -128,7 +128,7 @@ if ( function_exists( 'yoast_analytics' ) ) {
 						.'</table>'; 
 					} ?>
                     </td>
-    				<td align="center"><a href="https://www.utc.edu" target="_blank"><img src="https://www.utc.edu/_resources/img/web-wordmark-retina.png" width="250" height="36" alt="UT icon" border="0" /></a></td>
+    				<td align="center"><a href="https://www.utc.edu" target="_blank"><img src="<?php echo plugin_dir_url( __FILE__ ).'assets/img/web-wordmark-retina.png'; ?>" width="250" height="36" alt="UT icon" border="0" /></a></td>
   					</tr>
 				</table>
 				

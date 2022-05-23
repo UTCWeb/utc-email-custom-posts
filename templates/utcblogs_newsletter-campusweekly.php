@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Newsletter Magazine Template
+ * Template Name: Campus Weekly Newsletter
  * Template Post Type: utcblogs_newsletter
  */
 ?>
