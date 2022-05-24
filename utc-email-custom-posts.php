@@ -7,7 +7,7 @@
  * Author URI:      https://chrisgilligan.com/
  * Text Domain:     utc-email-custom-posts
  * Domain Path:     /languages
- * Version:         0.1.0
+ * Version:         0.2.2
  *
  * @package         Utc_Email_Custom_Posts
  */
