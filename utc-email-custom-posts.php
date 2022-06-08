@@ -7,14 +7,13 @@
  * Author URI:      https://chrisgilligan.com/
  * Text Domain:     utc-email-custom-posts
  * Domain Path:     /languages
- * Version:         0.1.0
+ * Version:         0.2.3
  *
  * @package         Utc_Email_Custom_Posts
  */
 
 /* Newsletter Custom Post Type and taxonomies */
 
-add_action( 'init', 'register_cpt_utcblogs_newsletter' );
 function register_cpt_utcblogs_newsletter() {
     $args = [
         'label'  => esc_html__( 'Newsletters', 'text-domain' ),
@@ -67,6 +66,7 @@ function register_cpt_utcblogs_newsletter() {
 
     register_post_type( 'utcblogs_newsletter', $args );
 }
+add_action( 'init', 'register_cpt_utcblogs_newsletter' );
 
 /**
  * load WP Templater library file
