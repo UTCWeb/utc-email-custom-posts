@@ -1,0 +1,5 @@
+{
+    "require": {
+        "jozoor/wp-templater": "^1.0"
+    }
+}
