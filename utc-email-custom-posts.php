@@ -41,11 +41,11 @@ function register_cpt_utcblogs_newsletter() {
         'show_ui'             => true,
         'show_in_nav_menus'   => true,
         'show_in_admin_bar'   => true,
-        //'show_in_rest'        => true,//support for Gutenberg block editor
-        //'rest_base'           => 'newsletters',//support for Gutenberg block editor
+        'show_in_rest'        => true,//support for Gutenberg block editor
+        'rest_base'           => 'newsletters',//support for Gutenberg block editor
         'capability_type'     => 'page',
         'hierarchical'        => true,
-        'has_archive'         => 'newsletters',
+        'has_archive'         => true,
         'query_var'           => true,
         'can_export'          => true,
         'rewrite_no_front'    => false,
@@ -94,4 +94,14 @@ function my_custom_sizes( $sizes ) {
     return array_merge( $sizes, array(
         'newsletter-large' => __('Large 580px wide'),
     ) );
+}
+
+// Responsive images: remove height/width attributes... reset as inline style;
+// important for email Newsletter images
+add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10 );
+add_filter( 'the_content', 'remove_thumbnail_dimensions', 10 );
+
+function remove_thumbnail_dimensions( $html ) {
+    $html = preg_replace( '/(width|height)=\"\d*\"\s/', 'style="max-width: 100%;"', $html );
+    return $html;
 }
