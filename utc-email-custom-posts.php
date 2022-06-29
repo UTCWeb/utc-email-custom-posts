@@ -146,6 +146,7 @@ function load_templater()
                 //'page-template.php' => 'Page Custom Template',
                 // with sub folders
                 //'path/to/product-template.php' => 'Product Custom Template',
+                //'single-utcblogs_newsletter.php' => 'Default/Magazine Newsletter',
                 'utcblogs_newsletter-campusweekly.php' => 'Campus Weekly Newsletter',
                 //'utcblogs_newsletter-digest.php' => 'Weekly Digest Newsletter',
                 //'utcblogs_newsletter-letterhead.php' => 'Letterhead Newsletter',
