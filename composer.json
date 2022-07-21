@@ -8,7 +8,7 @@
         "email": "chris-gilligan@utc.edu"
     }],
     "require": {
-        "jozoor/wp-templater": "^1.0",
+        "jozoor/wp-templater": "^1.0"
     },
     "config": {
         "allow-plugins": {
