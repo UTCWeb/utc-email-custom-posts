@@ -9,10 +9,5 @@
     }],
     "require": {
         "jozoor/wp-templater": "^1.0"
-    },
-    "config": {
-        "allow-plugins": {
-            "composer/installers": true
-        }
     }
 }
