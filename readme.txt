@@ -3,7 +3,7 @@ Contributors: (this should be a list of wordpress.org userid's)
 Donate link: https://example.com/
 Tags: email, custom post type, template
 Requires at least: 4.5
-Tested up to: 5.9.3
+Tested up to: 6.0.2
 Requires PHP: 8.0
 Stable tag: 0.3.2
 License: GPLv2 or later

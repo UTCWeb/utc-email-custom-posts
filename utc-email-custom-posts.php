@@ -7,7 +7,7 @@
  * Author URI:      https://chrisgilligan.com/
  * Text Domain:     utc-email-custom-posts
  * Domain Path:     /languages
- * Version:         0.3.2
+ * Version:         0.3.3
  *
  * @package         Utc_Email_Custom_Posts
  */
@@ -146,7 +146,7 @@ function load_templater()
                 //'page-template.php' => 'Page Custom Template',
                 // with sub folders
                 //'path/to/product-template.php' => 'Product Custom Template',
-                //'single-utcblogs_newsletter.php' => 'Default/Magazine Newsletter',
+                'single-utcblogs_newsletter.php' => 'Default/Magazine Newsletter',
                 'utcblogs_newsletter-campusweekly.php' => 'Campus Weekly Newsletter',
                 //'utcblogs_newsletter-digest.php' => 'Weekly Digest Newsletter',
                 //'utcblogs_newsletter-letterhead.php' => 'Letterhead Newsletter',
