@@ -196,7 +196,7 @@
                                                             <?php if( ! empty( $post->post_title ) ) : ?>
                                                                 <h2 class="regular" style="Margin:0;Margin-bottom:10px;color:#112e51;font-family:Helvetica,Arial,sans-serif;font-size:30px;font-stretch:condensed;font-weight:400;letter-spacing:-1px;line-height:1.0;margin:0;margin-bottom:10px;padding:0;text-align:left;text-transform:none;word-wrap:normal"><?php the_title(); ?></h2>
                                                             <?php endif; ?>
-                                                            <p style="Margin:0;Margin-bottom:10px;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;line-height:1.4;margin:0;margin-bottom:10px;padding:0;text-align:left"><?php the_content( 'Read More »' ); ?></p>
+                                                            <p style="Margin:0;Margin-bottom:10px;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;line-height:1.4;margin:0;margin-bottom:10px;padding:0;text-align:left"><?php the_excerpt( 'Read It All »' ); ?></p>
                                                         </th>
                                                     </tr>
                                                     </tbody>
@@ -224,7 +224,7 @@
                                                                 <?php endif; ?>
                                                                 <?php endif; ?>
                                                                 <!-- Content -->
-                                                                <?php the_content(); ?>
+                                                                <?php the_excerpt( 'Read It All »' ); ?>
                                                         </th>
                                                         <th class="expander" style="-moz-box-sizing:border-box;-moz-hyphens:auto;-webkit-box-sizing:border-box;-webkit-hyphens:auto;Margin:0;border-collapse:collapse!important;box-sizing:border-box;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;hyphens:auto;line-height:1.4;margin:0;padding:0!important;text-align:left;vertical-align:top;visibility:hidden;width:0;word-wrap:break-word"></th>
                                                     </tr>
