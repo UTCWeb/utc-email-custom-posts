@@ -59,6 +59,9 @@ function register_cpt_utcblogs_newsletter() {
             'thumbnail',
             'revisions',
             'page-attributes',
+            'genesis-seo',
+            'genesis-layouts',
+            'genesis-cpt-archives-settings',
         ],
 
         'rewrite' => [ 'slug' => 'newsletters', ]
@@ -67,6 +70,23 @@ function register_cpt_utcblogs_newsletter() {
     register_post_type( 'utcblogs_newsletter', $args );
 }
 add_action( 'init', 'register_cpt_utcblogs_newsletter' );
+
+/**
+ * Flush Permalinks on (de)activation or theme change
+ */
+function utcblogs_newsletter_activate() {
+    // register taxonomies/post types here
+    flush_rewrite_rules();
+}
+
+register_activation_hook( __FILE__, 'utcblogs_newsletter_activate' );
+
+function utcblogs_newsletter_deactivate() {
+    flush_rewrite_rules();
+}
+register_deactivation_hook( __FILE__, 'utcblogs_newsletter_deactivate' );
+
+add_action( 'after_switch_theme', 'flush_rewrite_rules' );
 
 /**
  * load WP Templater library file
@@ -148,6 +168,8 @@ function load_templater()
                 //'path/to/product-template.php' => 'Product Custom Template',
                 'single-utcblogs_newsletter.php' => 'Default/Magazine Newsletter',
                 'utcblogs_newsletter-campusweekly.php' => 'Campus Weekly Newsletter',
+                'utcblogs_newsletter-enews.php' => 'E-Newsletter Compilation',
+                'archive-utcblogs_newsletter.php' => 'Newsletter Archives',
                 //'utcblogs_newsletter-digest.php' => 'Weekly Digest Newsletter',
                 //'utcblogs_newsletter-letterhead.php' => 'Letterhead Newsletter',
             ),
@@ -175,6 +197,21 @@ function load_templater()
     )->register();
 
 }
+
+/*
+ * Force archive template for archive calls
+ */
+
+function get_utcblogs_newsletter_archive_template( $archive_template ) {
+    global $post;
+
+    if ( is_post_type_archive ( 'utcblogs_newsletter' ) ) {
+        $archive_template = WP_PLUGIN_DIR .'/'. plugin_basename( dirname(__FILE__) ) . '/templates/archive-utcblogs_newsletter.php';
+    }
+    return $archive_template;
+}
+
+add_filter( 'archive_template', 'get_utcblogs_newsletter_archive_template' ) ;
 
 /**
  * register special image sizes and allow image size chooser to use 580
