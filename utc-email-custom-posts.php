@@ -95,8 +95,12 @@ add_action( 'after_switch_theme', 'flush_rewrite_rules' );
  * composer require jozoor/wp-templater
  */
 
-require_once __DIR__ . '/vendor/autoload.php';// via Composer
-//require_once __DIR__ . '/wp-templater-1.0.1/src/Templater.php';// via local plugin; for local dev only
+/* via Composer
+if ( is_readable( __DIR__ . '/vendor/autoload.php' ) ) {
+    require __DIR__ . '/vendor/autoload.php';
+}
+*/
+require_once __DIR__ . '/wp-templater-1.0.1/src/Templater.php';// via local plugin; for local dev only
 
 use JO\Module\Templater\Templater;
 
