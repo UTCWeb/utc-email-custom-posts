@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: UTC C-Note Newsletter
+ * Template Name: Image Header Newsletter
  * Template Post Type: utcblogs_newsletter
  */
 ?>
