@@ -171,6 +171,7 @@ function load_templater()
                 // with sub folders
                 //'path/to/product-template.php' => 'Product Custom Template',
                 'single-utcblogs_newsletter.php' => 'Default/Magazine Newsletter',
+                'utcblogs_newsletter-image-header.php' => 'Image Header Newsletter',
                 'utcblogs_newsletter-campusweekly.php' => 'Campus Weekly Newsletter',
                 'utcblogs_newsletter-enews.php' => 'E-Newsletter Compilation',
                 'archive-utcblogs_newsletter.php' => 'Newsletter Archives',
@@ -221,6 +222,7 @@ add_filter( 'archive_template', 'get_utcblogs_newsletter_archive_template' ) ;
  * register special image sizes and allow image size chooser to use 580
  **/
 if ( function_exists( 'add_image_size' ) ) {
+    add_image_size( 'newsletter-featured-header', 800, 9999 ); //580 pixels wide (and unlimited height) for newsletter header image
     add_image_size( 'newsletter-large', 580, 9999 ); //580 pixels wide (and unlimited height) for newsletter header image
     add_image_size( 'medium-large', 610, 9999 ); //610 pixels wide (and unlimited height) for newsletter header image
     add_image_size( 'large-thumbnail', 600, 600, true ); //600 pixels wide & tall for newsletter retina/thumb images
