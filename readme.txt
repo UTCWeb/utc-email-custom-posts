@@ -1,11 +1,11 @@
 === Utc Email Custom Posts ===
-Contributors: (this should be a list of wordpress.org userid's)
+Contributors: (playgod)
 Donate link: https://example.com/
 Tags: email, custom post type, template
 Requires at least: 4.5
-Tested up to: 6.0.2
-Requires PHP: 8.0
-Stable tag: 0.3.2
+Tested up to: 6.3.1
+Requires PHP: 8.0+
+Stable tag: 0.3.11
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,13 +25,10 @@ Tips for newsletter content:
 ## To create a newsletter:
 
 - Hover or click the + New menu item and click Newsletter
-- Title the post with the date range: e.g. "April 1 - April 8, 2022"
-  - Title becomes part of the first paragraph:
-  - "What you should know for the week of April 1 - April 8, 2022"
 - Add a Classic block to the content area (just begin typing "/class" and it'll appear for selection)
-- In the Newsletter tab, under Templates, select the Campus Weekly Newsletter template
+- In the Newsletter tab, under Templates, select the Image Header template, Default template, or E-News Digest template
 - Use the WordPress visual editor to compose a simple post with text and images
-- Publish or Update the newsletter, then click View Newsletter the "Page updated" message that appears in the editor
+- Publish or Update the newsletter, then click View Newsletter on the "Page updated" message that appears in the editor
 
 == Installation ==
 
@@ -58,3 +55,5 @@ Answer to foo bar dilemma.
 == Changelog ==
 
 0.2 Pre-release has a single template for Campus Weekly newsletter
+0.3 Adds additional templates for various uses
+0.3.11 Adds Image Header template and deprecates Campus Weekly newsletter template
