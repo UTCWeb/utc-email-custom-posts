@@ -31,50 +31,6 @@
     <tr style="padding:0;text-align:left;vertical-align:top">
         <td class="center" align="center" valign="top" style="-moz-box-sizing:border-box;-moz-hyphens:auto;-webkit-box-sizing:border-box;-webkit-hyphens:auto;Margin:0;border-collapse:collapse!important;box-sizing:border-box;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;hyphens:auto;line-height:1.4;margin:0;padding:0;text-align:left;vertical-align:top;word-wrap:break-word">
             <center style="width:100%">
-                <table align="center" class="wrapper header float-center" style="Margin:0 auto;background:#112e51;border-collapse:collapse;border-spacing:0;float:none;margin:0 auto;padding:0;text-align:center;vertical-align:top;width:100%">
-                    <tbody>
-                    <tr style="padding:0;text-align:left;vertical-align:top">
-                        <td class="wrapper-inner" style="-moz-box-sizing:border-box;-moz-hyphens:auto;-webkit-box-sizing:border-box;-webkit-hyphens:auto;Margin:0;border-collapse:collapse!important;box-sizing:border-box;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;hyphens:auto;line-height:1.4;margin:0;padding:20px;text-align:left;vertical-align:top;word-wrap:break-word">
-                            <table align="center" class="container" style="Margin:0 auto;background:0 0;border-collapse:collapse;border-spacing:0;margin:0 auto;padding:0;text-align:inherit;vertical-align:top;width:640px">
-                                <tbody>
-                                <tr style="padding:0;text-align:left;vertical-align:top">
-                                    <td style="-moz-box-sizing:border-box;-moz-hyphens:auto;-webkit-box-sizing:border-box;-webkit-hyphens:auto;Margin:0;border-collapse:collapse!important;box-sizing:border-box;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;hyphens:auto;line-height:1.4;margin:0;padding:0;text-align:left;vertical-align:top;word-wrap:break-word">
-                                        <table class="row collapse" style="border-collapse:collapse;border-spacing:0;display:table;padding:0;position:relative;text-align:left;vertical-align:top;width:100%">
-                                            <tbody>
-                                            <tr style="padding:0;text-align:left;vertical-align:top">
-                                                <th class="small-8 large-8 columns first" style="-moz-box-sizing:border-box;-moz-hyphens:auto;-webkit-box-sizing:border-box;-webkit-hyphens:auto;Margin:0 auto;border-collapse:collapse!important;box-sizing:border-box;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;hyphens:auto;line-height:1.4;margin:0 auto;padding:0;padding-bottom:0;padding-left:0;padding-right:0;text-align:left;vertical-align:top;width:434.6666666667px;word-wrap:break-word">
-                                                    <table style="border-collapse:collapse;border-spacing:0;padding:0;text-align:left;vertical-align:top;width:100%">
-                                                        <tbody>
-                                                        <tr style="padding:0;text-align:left;vertical-align:top">
-                                                            <th style="-moz-box-sizing:border-box;-moz-hyphens:auto;-webkit-box-sizing:border-box;-webkit-hyphens:auto;Margin:0;border-collapse:collapse!important;box-sizing:border-box;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;hyphens:auto;line-height:1.4;margin:0;padding:0;text-align:left;vertical-align:top;word-wrap:break-word">
-                                                                <img src="<?php echo plugin_dir_url( __FILE__ ).'assets/img/web-wordmark-retina.png'; ?>" height="40" width="275" style="-ms-interpolation-mode:bicubic;clear:both;display:block;max-width:100%;outline:0;text-decoration:none;width:auto">
-                                                            </th>
-                                                        </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </th>
-                                                <th class="small-4 large-4 columns last" style="-moz-box-sizing:border-box;-moz-hyphens:auto;-webkit-box-sizing:border-box;-webkit-hyphens:auto;Margin:0 auto;border-collapse:collapse!important;box-sizing:border-box;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;hyphens:auto;line-height:1.4;margin:0 auto;padding:0;padding-bottom:0;padding-left:0;padding-right:0;text-align:left;vertical-align:top;width:221.3333333333px;word-wrap:break-word">
-                                                    <table style="border-collapse:collapse;border-spacing:0;padding:0;text-align:left;vertical-align:top;width:100%">
-                                                        <tbody>
-                                                        <tr style="padding:0;text-align:left;vertical-align:top">
-                                                            <th style="-moz-box-sizing:border-box;-moz-hyphens:auto;-webkit-box-sizing:border-box;-webkit-hyphens:auto;Margin:0;border-collapse:collapse!important;box-sizing:border-box;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;hyphens:auto;line-height:1.4;margin:0;padding:0;text-align:left;vertical-align:top;word-wrap:break-word">
-                                                                <img class="float-right" style="-ms-interpolation-mode:bicubic;clear:both;display:block;float:right;margin-bottom:-34px;margin-top:-18px;max-width:100%;outline:0;text-align:right;text-decoration:none;width:auto" src="<?php echo plugin_dir_url( __FILE__ ).'assets/img/gray-gold-slash.png';?>">
-                                                            </th>
-                                                        </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </th>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
                 <table align="center" class="container float-center" style="Margin:0 auto;background:#fefefe;border-collapse:collapse;border-spacing:0;float:none;margin:0 auto;padding:0;text-align:center;vertical-align:top;width:640px">
                     <tbody>
                     <tr style="padding:0;text-align:left;vertical-align:top">
@@ -89,13 +45,19 @@
                             <table class="row" style="border-collapse:collapse;border-spacing:0;display:table;padding:0;position:relative;text-align:left;vertical-align:top;width:100%">
                                 <tbody>
                                 <tr style="padding:0;text-align:left;vertical-align:top">
+                                    <img src="<?php echo plugin_dir_url( __FILE__ ).'assets/img/campus-weekly-header.png'; ?>" alt="" style="-ms-interpolation-mode:bicubic;clear:both;display:block;max-width:100%;outline:0;text-decoration:none;width:auto">
                                     <th class="small-12 large-12 columns first last" style="-moz-box-sizing:border-box;-moz-hyphens:auto;-webkit-box-sizing:border-box;-webkit-hyphens:auto;Margin:0 auto;border-collapse:collapse!important;box-sizing:border-box;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;hyphens:auto;line-height:1.4;margin:0 auto;padding:0;padding-bottom:20px;padding-left:16px;padding-right:16px;text-align:left;vertical-align:top;width:624px;word-wrap:break-word">
+                                        <table class="spacer" style="border-collapse:collapse;border-spacing:0;padding:0;text-align:left;vertical-align:top;width:100%">
+                                            <tbody>
+                                            <tr style="padding:0;text-align:left;vertical-align:top">
+                                                <td height="16" style="-moz-box-sizing:border-box;-moz-hyphens:auto;-webkit-box-sizing:border-box;-webkit-hyphens:auto;Margin:0;border-collapse:collapse!important;box-sizing:border-box;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font-size:16px;font-weight:400;hyphens:auto;line-height:16px;margin:0;mso-line-height-rule:exactly;padding:0;text-align:left;vertical-align:top;word-wrap:break-word">&nbsp;</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
                                         <table style="border-collapse:collapse;border-spacing:0;padding:0;text-align:left;vertical-align:top;width:100%">
                                             <tbody>
                                             <tr style="padding:0;text-align:left;vertical-align:top">
                                                 <th style="-moz-box-sizing:border-box;-moz-hyphens:auto;-webkit-box-sizing:border-box;-webkit-hyphens:auto;Margin:0;border-collapse:collapse!important;box-sizing:border-box;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;hyphens:auto;line-height:1.4;margin:0;padding:0;text-align:left;vertical-align:top;word-wrap:break-word">
-                                                    <h1 style="Margin:0;Margin-bottom:10px;color:#112e51;font-family:Helvetica,Arial,sans-serif;font-size:34px;font-stretch:condensed;font-weight:400;letter-spacing:1px;line-height:1.4;margin:0;margin-bottom:10px;padding:0;text-align:left;text-transform:uppercase;word-wrap:normal">UTC Campus Weekly</h1>
-                                                    <hr style="border-top:1px solid #0a0a0a">
                                                     <p style="Margin:0;Margin-bottom:10px;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font-size:18px;font-weight:800;line-height:1.4;margin:0;margin-bottom:10px;padding:0;text-align:left">Updates and news for the week of&nbsp;<?php the_title(); ?></p>
                                                     <?php if (have_posts()) : ?>
                                                         <?php while (have_posts()) : the_post(); ?>
