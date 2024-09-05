@@ -5,16 +5,70 @@
  */
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en" style="background:#f3f3f3!important">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en" style="background:#f3f3f3!important" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--[if gte mso 9]><xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml><![endif]-->
+    <!--Variables-->
     <title><?php bloginfo( 'name' ); ?>: <?php the_title(); ?></title>
     <?php
     if ( function_exists( 'yoast_analytics' ) ) {
         yoast_analytics();
     }
     ?>
+    <style>
+        /* CLIENT-SPECIFIC STYLES */
+        img{-ms-interpolation-mode: bicubic;}
+        /* Force IE to smoothly render resized images. */
+        #outlook a{padding:0;}
+        /* Force Outlook 2007 and up to provide a "view in browser" message. */
+        table{mso-table-lspace:0pt;mso-table-rspace:0pt;}
+        /* Remove spacing between tables in Outlook 2007 and up. */
+        .ReadMsgBody{width:100%;}
+        .ExternalClass{width:100%;}
+        /* Force Outlook.com to display emails at full width. */
+        p, a, li, td, blockquote{mso-line-height-rule:exactly;}
+        /* Force Outlook to render line heights as they're originally set. */
+        a[href^="tel"], a[href^="sms"]{color:inherit;cursor:default; text-decoration:none;}
+        /* Force mobile devices to inherit declared link styles. */
+        p, a, li, td, body, table, blockquote{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+        /* Prevent Windows- and Webkit-based mobile platforms from changing declared text sizes. */
+        .ExternalClass, .ExternalClass p, .ExternalClass td, .ExternalClass div, .ExternalClass span, .ExternalClass font{line-height:100%;}
+        /* Force Outlook.com to display line heights normally. */
+        table{border-collapse:collapse;}
+
+        html {
+            -webkit-text-size-adjust: none;
+        }
+
+        #gmailModule,
+        .mobileOnly{ display:none !important; }
+        /*Hide Full-Width Image on Desktop*/
+    </style>
+    <!--[if gte mso 9]>
+    <style type="text/css">
+        td, p, ul, ol, li {
+            font-family:Arial, sans-serif !important;
+        }
+        ul, ol {
+            margin: 0px 0px 0px 26px !important;
+            padding: 0px !important;
+            list-style-position: inside !important;
+        }
+        table.outlookPadColumn{
+            width:34% !important;
+            padding-right:2% !important;
+        }
+        td.outlookFloat{margin-left:40px;padding-right:0px !important;}
+    </style>
+    <![endif]-->
     <style>/* ZURB Ink 2.0 stylesheet plus color mods */
         @media only screen{html{min-height:100%;background:#f3f3f3}}@media only screen and (max-width:656px){.small-float-center{margin:0 auto!important;float:none!important;text-align:center!important}}@media only screen and (max-width:656px){table.body img{width:auto;height:auto}table.body center{min-width:0!important}table.body .container{width:95%!important}table.body .columns{height:auto!important;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;padding-left:16px!important;padding-right:16px!important}table.body .collapse>tbody>tr>.columns{padding-left:0!important;padding-right:0!important}th.small-3{display:inline-block!important;width:25%!important}th.small-4{display:inline-block!important;width:33.333333%!important}th.small-6{display:inline-block!important;width:50%!important}th.small-8{display:inline-block!important;width:66.666666%!important}th.small-12{display:inline-block!important;width:100%!important}.columns th.small-12{display:block!important;width:100%!important}table.menu{width:100%!important}table.menu td,table.menu th{width:auto!important;display:inline-block!important}table.menu.vertical td,table.menu.vertical th{display:block!important}table.menu[align=center]{width:auto!important}th.callout-inner{padding:10px!important}}
     </style>

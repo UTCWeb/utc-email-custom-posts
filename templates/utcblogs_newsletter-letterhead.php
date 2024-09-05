@@ -5,10 +5,65 @@
  */
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title><?php the_title(); ?> | <?php bloginfo( 'name' ); ?></title>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--[if gte mso 9]><xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml><![endif]-->
+    <!--Variables-->
+    <title><?php the_title(); ?> | <?php bloginfo( 'name' ); ?></title>
+    <style>
+        /* CLIENT-SPECIFIC STYLES */
+        img{-ms-interpolation-mode: bicubic;}
+        /* Force IE to smoothly render resized images. */
+        #outlook a{padding:0;}
+        /* Force Outlook 2007 and up to provide a "view in browser" message. */
+        table{mso-table-lspace:0pt;mso-table-rspace:0pt;}
+        /* Remove spacing between tables in Outlook 2007 and up. */
+        .ReadMsgBody{width:100%;}
+        .ExternalClass{width:100%;}
+        /* Force Outlook.com to display emails at full width. */
+        p, a, li, td, blockquote{mso-line-height-rule:exactly;}
+        /* Force Outlook to render line heights as they're originally set. */
+        a[href^="tel"], a[href^="sms"]{color:inherit;cursor:default; text-decoration:none;}
+        /* Force mobile devices to inherit declared link styles. */
+        p, a, li, td, body, table, blockquote{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+        /* Prevent Windows- and Webkit-based mobile platforms from changing declared text sizes. */
+        .ExternalClass, .ExternalClass p, .ExternalClass td, .ExternalClass div, .ExternalClass span, .ExternalClass font{line-height:100%;}
+        /* Force Outlook.com to display line heights normally. */
+        table{border-collapse:collapse;}
+
+        html {
+            -webkit-text-size-adjust: none;
+        }
+
+        #gmailModule,
+        .mobileOnly{ display:none !important; }
+        /*Hide Full-Width Image on Desktop*/
+    </style>
+    <!--[if gte mso 9]>
+    <style type="text/css">
+        td, p, ul, ol, li {
+            font-family:Arial, sans-serif !important;
+        }
+        ul, ol {
+            margin: 0px 0px 0px 26px !important;
+            padding: 0px !important;
+            list-style-position: inside !important;
+        }
+        table.outlookPadColumn{
+            width:34% !important;
+            padding-right:2% !important;
+        }
+        td.outlookFloat{margin-left:40px;padding-right:0px !important;}
+    </style>
+    <![endif]-->
     <style>/* internal stylesheet for compatibility with WP image code */
     img[class*=align],img[class*=wp-image-]{height:auto}.wp-caption{max-width:100%}img.size-full,img.size-large{height:auto;max-width:100%}.alignleft{float:left}.alignright{float:right}.aligncenter{display:block;margin-left:auto;margin-right:auto}blockquote.alignleft,img.alignleft{margin:7px 24px 7px 0}.wp-caption.alignleft{margin:7px 14px 7px 0}blockquote.alignright,img.alignright{margin:7px 0 7px 24px}.wp-caption.alignright{margin:7px 0 7px 14px}.wp-caption.aligncenter,blockquote.aligncenter,img.aligncenter{margin-top:7px;margin-bottom:7px}.wp-caption{margin-bottom:24px}.wp-caption img[class*=wp-image-]{display:block;margin:0}.wp-caption{color:#767676}.wp-caption-text{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;font-style:italic;margin:9px 0;padding-right:10px;font-size:12px;line-height:1.5}.gallery{margin-bottom:20px}.gallery-item{float:left;margin:0 4px 4px 0;overflow:hidden;position:relative}.gallery-columns-1 .gallery-item{max-width:100%}.gallery-columns-2 .gallery-item{max-width:48%;max-width:-webkit-calc(50% - 4px);max-width:calc(50% - 4px)}.gallery-columns-3 .gallery-item{max-width:32%;max-width:-webkit-calc(33.3% - 4px);max-width:calc(33.3% - 4px)}.gallery-columns-4 .gallery-item{max-width:23%;max-width:-webkit-calc(25% - 4px);max-width:calc(25% - 4px)}.gallery-columns-5 .gallery-item{max-width:19%;max-width:-webkit-calc(20% - 4px);max-width:calc(20% - 4px)}.gallery-columns-6 .gallery-item{max-width:15%;max-width:-webkit-calc(16.7% - 4px);max-width:calc(16.7% - 4px)}.gallery-columns-7 .gallery-item{max-width:13%;max-width:-webkit-calc(14.28% - 4px);max-width:calc(14.28% - 4px)}.gallery-columns-8 .gallery-item{max-width:11%;max-width:-webkit-calc(12.5% - 4px);max-width:calc(12.5% - 4px)}.gallery-columns-9 .gallery-item{max-width:9%;max-width:-webkit-calc(11.1% - 4px);max-width:calc(11.1% - 4px)}.gallery-columns-1 .gallery-item:nth-of-type(1n),.gallery-columns-2 .gallery-item:nth-of-type(2n),.gallery-columns-3 .gallery-item:nth-of-type(3n),.gallery-columns-4 .gallery-item:nth-of-type(4n),.gallery-columns-5 .gallery-item:nth-of-type(5n),.gallery-columns-6 .gallery-item:nth-of-type(6n),.gallery-columns-7 .gallery-item:nth-of-type(7n),.gallery-columns-8 .gallery-item:nth-of-type(8n),.gallery-columns-9 .gallery-item:nth-of-type(9n){margin-right:0}.gallery-caption{background-color:rgba(0,0,0,.7);-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;color:#fff;font-size:12px;line-height:1.5;margin:0;max-height:50%;opacity:0;padding:6px 8px;position:absolute;bottom:0;left:0;text-align:left;width:100%}.gallery-caption:before{content:"";height:100%;min-height:49px;position:absolute;top:0;left:0;width:100%}.gallery-item:hover .gallery-caption{opacity:1}.gallery-columns-7 .gallery-caption,.gallery-columns-8 .gallery-caption,.gallery-columns-9 .gallery-caption{display:none}
     /* additional internal styles */
@@ -21,7 +76,7 @@ if ( function_exists( 'yoast_analytics' ) ) {
 ?>
 </head>
 
-<body bgcolor="#f1f1f1">
+<body bgcolor="#f1f1f1"  style="background:#f1f1f1;margin:0;padding:0;mso-padding-alt: 0px 0px 0px 0px;"><style type="text/css">div#emailPreHeader{ display: none !important; }</style><div id="emailPreHeader" style="mso-hide:all; visibility:hidden; opacity:0; color:transparent; mso-line-height-rule:exactly; line-height:0; font-size:0px; overflow:hidden; border-width:0; display:none !important;">UTC Email pre-header</div>
 
 <!-- Begin header table -->
 <table width="600" border="0" cellspacing="0" cellpadding="10" align="center" bgcolor="#f1f1f1">
