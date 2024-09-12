@@ -45,7 +45,7 @@
                             <table class="row" style="border-collapse:collapse;border-spacing:0;display:table;padding:0;position:relative;text-align:left;vertical-align:top;width:100%">
                                 <tbody>
                                 <tr style="padding:0;text-align:left;vertical-align:top">
-                                    <img src="<?php echo plugin_dir_url( __FILE__ ).'assets/img/campus-weekly-header.png'; ?>" alt="" style="-ms-interpolation-mode:bicubic;clear:both;display:block;max-width:100%;outline:0;text-decoration:none;width:auto">
+                                    <img src="<?php echo plugin_dir_url( __FILE__ ).'assets/img/campus-weekly-header.png'; ?>" alt="" width="680" height="106" style="-ms-interpolation-mode:bicubic;clear:both;display:block;max-width:100%;outline:0;text-decoration:none;width:auto">
                                     <th class="small-12 large-12 columns first last" style="-moz-box-sizing:border-box;-moz-hyphens:auto;-webkit-box-sizing:border-box;-webkit-hyphens:auto;Margin:0 auto;border-collapse:collapse!important;box-sizing:border-box;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;hyphens:auto;line-height:1.4;margin:0 auto;padding:0;padding-bottom:20px;padding-left:16px;padding-right:16px;text-align:left;vertical-align:top;width:624px;word-wrap:break-word">
                                         <table class="spacer" style="border-collapse:collapse;border-spacing:0;padding:0;text-align:left;vertical-align:top;width:100%">
                                             <tbody>
