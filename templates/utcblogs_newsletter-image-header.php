@@ -191,7 +191,7 @@
                                                         <tbody>
                                                         <tr style="padding:0;text-align:left;vertical-align:top">
                                                             <th style="-moz-box-sizing:border-box;-moz-hyphens:auto;-webkit-box-sizing:border-box;-webkit-hyphens:auto;Margin:0;border-collapse:collapse!important;box-sizing:border-box;color:#0a0a0a;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;hyphens:auto;line-height:1.4;margin:0;padding:0;text-align:left;vertical-align:top;word-wrap:break-word">
-                                                                <p class="small" style="Margin:0;Margin-bottom:10px;color:#8a8a8a;font-family:Helvetica,Arial,sans-serif;font-size:80%;font-weight:400;line-height:1.4;margin:0;margin-bottom:10px;padding:0;text-align:left">&copy; <?php the_time('Y') ?> University of Tennessee at Chattanooga <br>615 McCallie Ave, Chattanooga, TN 37405 </p>
+                                                                <p class="small" style="Margin:0;Margin-bottom:10px;color:#8a8a8a;font-family:Helvetica,Arial,sans-serif;font-size:80%;font-weight:400;line-height:1.4;margin:0;margin-bottom:10px;padding:0;text-align:left">&copy; <?php the_time('Y') ?> University of Tennessee at Chattanooga <br>615 McCallie Ave, Chattanooga, TN 37403 </p>
                                                             </th>
                                                         </tr>
                                                         </tbody>
